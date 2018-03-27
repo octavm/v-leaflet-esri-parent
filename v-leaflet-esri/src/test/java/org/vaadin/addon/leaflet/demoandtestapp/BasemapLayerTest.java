@@ -27,9 +27,9 @@ public class BasemapLayerTest extends AbstractTest {
         LEsriBasemapLayer imageryBasemap = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Imagery);
 
         LTileLayer tileLayer = new LTileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}");
-        LEsriTiledMapLayer tiledMapLayer = new LEsriTiledMapLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}");
+        LEsriTiledMapLayer tiledMapLayer = new LEsriTiledMapLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}");
 
-        leafletMap.addBaseLayer(tiledMapLayer, "World Imagery Map");
+        leafletMap.addBaseLayer(imageryBasemap, "World Imagery Map");
         leafletMap.addBaseLayer(streetsBasemap, "Streets");
 
 
