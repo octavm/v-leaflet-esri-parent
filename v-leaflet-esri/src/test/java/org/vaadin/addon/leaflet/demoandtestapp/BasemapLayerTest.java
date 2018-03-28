@@ -2,9 +2,7 @@ package org.vaadin.addon.leaflet.demoandtestapp;
 
 import com.vaadin.ui.Component;
 import org.vaadin.addon.leaflet.LMap;
-import org.vaadin.addon.leaflet.LTileLayer;
 import org.vaadin.addon.leaflet.esri.LEsriBasemapLayer;
-import org.vaadin.addon.leaflet.esri.LEsriTiledMapLayer;
 import org.vaadin.addonhelpers.AbstractTest;
 
 public class BasemapLayerTest extends AbstractTest {
@@ -20,18 +18,65 @@ public class BasemapLayerTest extends AbstractTest {
     public Component getTestComponent() {
 
         leafletMap = new LMap();
-        leafletMap.setCenter(60.4525, 22.301);
-        leafletMap.setZoomLevel(15);
+        leafletMap.setCenter(40.39754, -104.7099);
+        leafletMap.setZoomLevel(13);
 
-        LEsriBasemapLayer streetsBasemap = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Streets);
-        LEsriBasemapLayer imageryBasemap = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Imagery);
+        LEsriBasemapLayer streets = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Streets);
+        LEsriBasemapLayer topographic = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Topographic);
+        LEsriBasemapLayer oceans = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Oceans);
+        LEsriBasemapLayer oceansLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.OceansLabels);
+        LEsriBasemapLayer nationalGeographic = new LEsriBasemapLayer(LEsriBasemapLayer.Type.NationalGeographic);
+        LEsriBasemapLayer gray = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Gray);
+        LEsriBasemapLayer grayLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.GrayLabels);
+        LEsriBasemapLayer darkGray = new LEsriBasemapLayer(LEsriBasemapLayer.Type.DarkGray);
+        LEsriBasemapLayer darkGrayLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.DarkGrayLabels);
+        LEsriBasemapLayer imagery = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Imagery);
+        LEsriBasemapLayer imageryClarity = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryClarity);
+        LEsriBasemapLayer imageryTransportation = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryTransportation);
+        LEsriBasemapLayer imageryLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryLabels);
+        LEsriBasemapLayer shadedRelief = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ShadedRelief);
+        LEsriBasemapLayer shadedReliefLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ShadedReliefLabels);
+        LEsriBasemapLayer terrain = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Terrain);
+        LEsriBasemapLayer terrainLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.TerrainLabels);
+        LEsriBasemapLayer usaTopo = new LEsriBasemapLayer(LEsriBasemapLayer.Type.USATopo);
 
-        LTileLayer tileLayer = new LTileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}");
-        LEsriTiledMapLayer tiledMapLayer = new LEsriTiledMapLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}");
+        streets.setActive(true);
+        topographic.setActive(false);
+        oceans.setActive(false);
+        oceansLabels.setActive(false);
+        nationalGeographic.setActive(false);
+        gray.setActive(false);
+        grayLabels.setActive(false);
+        darkGray.setActive(false);
+        darkGrayLabels.setActive(false);
+        imagery.setActive(false);
+        imageryClarity.setActive(false);
+        imageryTransportation.setActive(false);
+        imageryLabels.setActive(false);
+        shadedRelief.setActive(false);
+        shadedReliefLabels.setActive(false);
+        terrain.setActive(false);
+        terrainLabels.setActive(false);
+        usaTopo.setActive(false);
 
-        leafletMap.addBaseLayer(imageryBasemap, "World Imagery Map");
-        leafletMap.addBaseLayer(streetsBasemap, "Streets");
-
+        leafletMap.addBaseLayer(streets, "Streets");
+        leafletMap.addBaseLayer(topographic, "Topographic");
+        leafletMap.addBaseLayer(oceans, "Oceans");
+        leafletMap.addBaseLayer(oceansLabels, "OceansLabels");
+        leafletMap.addBaseLayer(nationalGeographic, "NationalGeographic");
+        leafletMap.addBaseLayer(gray, "Gray");
+        leafletMap.addBaseLayer(grayLabels, "GrayLabels");
+        leafletMap.addBaseLayer(darkGray, "DarkGray");
+        leafletMap.addBaseLayer(darkGrayLabels, "DarkGrayLabels");
+        leafletMap.addBaseLayer(imagery, "Imagery");
+        leafletMap.addBaseLayer(imageryClarity, "ImageryClarity");
+        leafletMap.addBaseLayer(imageryTransportation, "ImageryTransportation");
+        leafletMap.addBaseLayer(imageryLabels, "ImageryLabels");
+        leafletMap.addBaseLayer(shadedRelief, "ShadedRelief");
+        leafletMap.addBaseLayer(shadedReliefLabels, "ShadedReliefLabels");
+        leafletMap.addBaseLayer(terrain, "Terrain");
+        leafletMap.addBaseLayer(terrainLabels, "TerrainLabels");
+        leafletMap.addBaseLayer(usaTopo, "USATopo");
 
         return leafletMap;
     }
