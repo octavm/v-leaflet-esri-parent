@@ -106,7 +106,7 @@
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <skip>true</skip>
+                            <!--<skip>true</skip>-->
                         </configuration>
                     </execution>
                 </executions>
@@ -166,7 +166,7 @@
                         <style>PRETTY</style>
                         <!-- We only need to compile the test widgetset, if not defined gwt 
                         module will also compile the add-on widgetset as well -->
-                        <module>org.vaadin.addon.leaflet.Widgetset</module>
+                        <module>org.vaadin.addon.leaflet.esri.Widgetset</module>
                         <!-- If you do lots of e.g. plain css changes and don't wish to use 
                         hosted mode, you can force compile easily with uncommenting following rule -->
                         <!-- 						<force>true</force> -->
