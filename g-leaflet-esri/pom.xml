@@ -5,11 +5,16 @@
 	<!-- POM file generated with GWT webAppCreator -->
 	<modelVersion>4.0.0</modelVersion>
 
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<groupId>org.peimari</groupId>
 	<artifactId>g-leaflet-esri</artifactId>
 	<packaging>jar</packaging>
 	<name>g-leaflet-esri</name>
+
+	<organization>
+		<name>Vaadin Community</name>
+		<url>http://vaadin.com/forum/</url>
+	</organization>
 
 	<dependencies>
 		<dependency>
