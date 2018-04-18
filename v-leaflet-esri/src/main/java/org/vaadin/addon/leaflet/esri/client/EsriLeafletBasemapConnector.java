@@ -1,7 +1,7 @@
 package org.vaadin.addon.leaflet.esri.client;
 
 import com.vaadin.shared.ui.Connect;
-import org.peimari.gleaflet.client.TileLayerOptions;
+import org.peimari.gleaflet.client.GridLayerOptions;
 import org.peimari.gleaflet.esri.client.BasemapLayer;
 import org.peimari.gleaflet.esri.client.BasemapLayerOptions;
 import org.vaadin.addon.leaflet.client.LeafletTileLayerConnector;
@@ -27,7 +27,7 @@ public class EsriLeafletBasemapConnector extends LeafletTileLayerConnector {
     }
 
     @Override
-    protected BasemapLayer createTileLayer(TileLayerOptions o) {
+    protected BasemapLayer createGridLayer(GridLayerOptions o) {
         return BasemapLayer.create(getState().layerType, (BasemapLayerOptions) o);
     }
 }
