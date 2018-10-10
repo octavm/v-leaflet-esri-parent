@@ -20,7 +20,43 @@ public class EsriLeafletDynamicLayerConnector extends AbstractLeafletLayerConnec
 
     @Override
     protected DynamicMapLayerOptions createOptions() {
-        return DynamicMapLayerOptions.create(getState().url);
+        EsriLeafletDynamicLayerState state = getState();
+        DynamicMapLayerOptions options =  DynamicMapLayerOptions.create(getState().url);
+
+        if (state.format != null) {
+            options.setFormat(state.format);
+        }
+        if (state.transparent != null) {
+            options.setTransparent(state.transparent);
+        }
+        if (state.f != null) {
+            options.setF(state.f);
+        }
+        if (state.pane != null) {
+            options.setPane(state.pane);
+        }
+        if (state.zIndex != null) {
+            options.setZIndex(state.zIndex);
+        }
+        if (state.maxZoom != null) {
+            options.setMaxZoom(state.maxZoom);
+        }
+        if (state.minZoom != null) {
+            options.setMinZoom(state.minZoom);
+        }
+        if (state.disableCache != null) {
+            options.setDisableCache(state.disableCache);
+        }
+        if (state.token != null) {
+            options.setToken(state.token);
+        }
+        if (state.proxy != null) {
+            options.setProxy(state.proxy);
+        }
+        if (state.useCors != null) {
+            options.setUseCors(state.useCors);
+        }
+        return options;
     }
 
     @Override

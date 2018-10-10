@@ -13,8 +13,8 @@ public class LEsriBasemapLayer extends LTileLayer {
      */
     public enum Type {
         Streets, Topographic, Oceans, OceansLabels, NationalGeographic, Gray, GrayLabels, DarkGray, DarkGrayLabels,
-        Imagery, ImageryLabels, ImageryTransportation, ImageryClarity, ShadedRelief, ShadedReliefLabels, Terrain,
-        TerrainLabels, USATopo
+        Imagery, ImageryLabels, ImageryTransportation, ImageryClarity, ImageryFirefly, ShadedRelief, ShadedReliefLabels,
+        Terrain, TerrainLabels, USATopo, Physical
     }
 
     /**

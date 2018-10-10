@@ -21,14 +21,27 @@ public class EsriLeafletTiledLayerConnector extends LeafletTileLayerConnector {
     protected TiledMapLayerOptions createOptions() {
         TiledMapLayerOptions o = super.createOptions().cast();
         EsriLeafletTiledLayerState s = getState();
+
         if (s.url != null) {
             o.setUrl(s.url);
+        }
+        if (s.zoomOffsetAllowance != null) {
+            o.setZoomOffsetAllowance(s.zoomOffsetAllowance);
+        }
+        if (s.proxy != null) {
+            o.setProxy(s.proxy);
+        }
+        if (s.useCors != null) {
+            o.setUseCors(s.useCors);
+        }
+        if (s.token != null) {
+            o.setToken(s.token);
         }
         return o;
     }
 
-    protected TiledMapLayer createTileLayer(TileLayerOptions o) {
+    @Override
+    protected TiledMapLayer createGridLayer(GridLayerOptions o) {
         return TiledMapLayer.create((TiledMapLayerOptions) o);
     }
-
 }

@@ -12,7 +12,8 @@ public class DynamicMapLayer extends Layer {
     protected DynamicMapLayer() {
     }
 
-    public static native DynamicMapLayer create(DynamicMapLayerOptions options) /*-{
+    public static native DynamicMapLayer create(DynamicMapLayerOptions options)
+    /*-{
         return new $wnd.L.esri.dynamicMapLayer(options);
     }-*/;
 }

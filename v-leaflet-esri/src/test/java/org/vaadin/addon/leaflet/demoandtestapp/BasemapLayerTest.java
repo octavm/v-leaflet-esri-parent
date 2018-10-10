@@ -32,6 +32,7 @@ public class BasemapLayerTest extends AbstractTest {
         LEsriBasemapLayer darkGrayLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.DarkGrayLabels);
         LEsriBasemapLayer imagery = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Imagery);
         LEsriBasemapLayer imageryClarity = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryClarity);
+        LEsriBasemapLayer imageryClarityFirefly = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryFirefly);
         LEsriBasemapLayer imageryTransportation = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryTransportation);
         LEsriBasemapLayer imageryLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ImageryLabels);
         LEsriBasemapLayer shadedRelief = new LEsriBasemapLayer(LEsriBasemapLayer.Type.ShadedRelief);
@@ -39,6 +40,7 @@ public class BasemapLayerTest extends AbstractTest {
         LEsriBasemapLayer terrain = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Terrain);
         LEsriBasemapLayer terrainLabels = new LEsriBasemapLayer(LEsriBasemapLayer.Type.TerrainLabels);
         LEsriBasemapLayer usaTopo = new LEsriBasemapLayer(LEsriBasemapLayer.Type.USATopo);
+        LEsriBasemapLayer physical = new LEsriBasemapLayer(LEsriBasemapLayer.Type.Physical);
 
         streets.setActive(true);
         topographic.setActive(false);
@@ -51,6 +53,7 @@ public class BasemapLayerTest extends AbstractTest {
         darkGrayLabels.setActive(false);
         imagery.setActive(false);
         imageryClarity.setActive(false);
+        imageryClarityFirefly.setActive(false);
         imageryTransportation.setActive(false);
         imageryLabels.setActive(false);
         shadedRelief.setActive(false);
@@ -58,6 +61,7 @@ public class BasemapLayerTest extends AbstractTest {
         terrain.setActive(false);
         terrainLabels.setActive(false);
         usaTopo.setActive(false);
+        physical.setActive(false);
 
         leafletMap.addBaseLayer(streets, "Streets");
         leafletMap.addBaseLayer(topographic, "Topographic");
@@ -70,6 +74,7 @@ public class BasemapLayerTest extends AbstractTest {
         leafletMap.addBaseLayer(darkGrayLabels, "DarkGrayLabels");
         leafletMap.addBaseLayer(imagery, "Imagery");
         leafletMap.addBaseLayer(imageryClarity, "ImageryClarity");
+        leafletMap.addBaseLayer(imageryClarityFirefly, "ImageryFirefly");
         leafletMap.addBaseLayer(imageryTransportation, "ImageryTransportation");
         leafletMap.addBaseLayer(imageryLabels, "ImageryLabels");
         leafletMap.addBaseLayer(shadedRelief, "ShadedRelief");
@@ -77,6 +82,7 @@ public class BasemapLayerTest extends AbstractTest {
         leafletMap.addBaseLayer(terrain, "Terrain");
         leafletMap.addBaseLayer(terrainLabels, "TerrainLabels");
         leafletMap.addBaseLayer(usaTopo, "USATopo");
+        leafletMap.addBaseLayer(physical, "Physical");
 
         return leafletMap;
     }

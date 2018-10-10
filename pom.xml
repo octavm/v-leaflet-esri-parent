@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.peimari.leaflet.esri</groupId>
-    <artifactId>parent-pom</artifactId>
+    <artifactId>v-leaflet-esri-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>Esri Leaflet plugin wrappers for Java (Vaadin) and GWT, parent POM for loosely coupled projects</name>
+    <name>v-leaflet-esri-parent</name>
 
     <licenses>
         <license>
