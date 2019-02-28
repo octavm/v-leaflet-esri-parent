@@ -1,6 +1,7 @@
 package org.peimari.gleaflet.esri.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArrayInteger;
 
 public class DynamicMapLayerOptions extends JavaScriptObject {
 
@@ -27,6 +28,21 @@ public class DynamicMapLayerOptions extends JavaScriptObject {
     public native final void setF(String f)
     /*-{
         this.f = f;
+    }-*/;
+
+    public native final void setAttribution(String attribution)
+    /*-{
+        this.attribution = attribution;
+    }-*/;
+
+    public native final void setLayers(JsArrayInteger layers)
+    /*-{
+        this.layers = layers;
+    }-*/;
+
+    public native final void setOpacity(double opacity)
+    /*-{
+        this.opacity = opacity;
     }-*/;
 
     public native final void setPane(String pane)

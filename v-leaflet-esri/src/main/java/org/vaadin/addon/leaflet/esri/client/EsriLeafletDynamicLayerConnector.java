@@ -1,5 +1,6 @@
 package org.vaadin.addon.leaflet.esri.client;
 
+import com.google.gwt.core.client.JsArrayUtils;
 import com.vaadin.shared.ui.Connect;
 import org.peimari.gleaflet.client.Layer;
 import org.peimari.gleaflet.esri.client.DynamicMapLayer;
@@ -31,6 +32,15 @@ public class EsriLeafletDynamicLayerConnector extends AbstractLeafletLayerConnec
         }
         if (state.f != null) {
             options.setF(state.f);
+        }
+        if (state.attribution != null) {
+            options.setAttribution(state.attribution);
+        }
+        if (state.layers != null) {
+            options.setLayers(JsArrayUtils.readOnlyJsArray(state.layers));
+        }
+        if (state.opacity != null) {
+            options.setOpacity(state.opacity);
         }
         if (state.pane != null) {
             options.setPane(state.pane);

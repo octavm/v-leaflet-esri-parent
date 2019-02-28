@@ -56,6 +56,42 @@ public class LEsriDynamicMapLayer extends AbstractLeafletLayer {
         getState().f = f.toString();
     }
 
+    public String getAttribution() {
+        return getState().attribution;
+    }
+
+    /**
+     * Set a custom attribution to override the one from service metadata which is automaticaly displayed.
+     * @return
+     */
+    public void setAttribution(String attribution) {
+        getState().attribution = attribution;
+    }
+
+    public int[] getLayers() {
+        return getState().layers;
+    }
+
+    /**
+     * Set an array of Layer IDs to show from the service.
+     * @param layers array of Layer IDs
+     */
+    public void setLayers(int[] layers) {
+        getState().layers = layers;
+    }
+
+    public Double getOpacity() {
+        return getState().opacity;
+    }
+
+    /**
+     * Set the opacity of the layer.
+     * @param opacity should be a value between 0 (completely transparent) and 1 (completely opaque)
+     */
+    public void setOpacity(Double opacity) {
+        getState().opacity = opacity;
+    }
+
     public String getPane() {
         return getState().pane;
     }

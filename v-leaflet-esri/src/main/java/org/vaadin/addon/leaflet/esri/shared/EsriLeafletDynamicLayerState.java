@@ -8,6 +8,9 @@ public class EsriLeafletDynamicLayerState extends AbstractLeafletComponentState 
     public String format;
     public Boolean transparent;
     public String f;
+    public String attribution;
+    public int[] layers;
+    public Double opacity;
     public String pane;
     public Integer zIndex;
     public Integer maxZoom;
