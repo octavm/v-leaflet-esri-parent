@@ -6,6 +6,9 @@ import org.vaadin.addon.leaflet.esri.LEsriBasemapLayer;
 import org.vaadin.addon.leaflet.esri.LEsriDynamicMapLayer;
 import org.vaadin.addonhelpers.AbstractTest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DynamicLayerTest extends AbstractTest {
 
     private LMap leafletMap;
@@ -32,6 +35,9 @@ public class DynamicLayerTest extends AbstractTest {
         kgsOilLayer.setOpacity(0.6);
         kgsOilLayer.setResponseFormat(LEsriDynamicMapLayer.ResponseFormat.image);
         kgsOilLayer.setActive(false);
+        Map<Integer, String> layerDefs = new HashMap<>();
+        layerDefs.put(0, "STATUS='Abandoned'");
+        kgsOilLayer.setLayerDefs(layerDefs);
         leafletMap.addOverlay(kgsOilLayer, "KGS_OilGasFields_Kansas");
 
         String lojicUrl = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_LandRecords_Louisville/MapServer";

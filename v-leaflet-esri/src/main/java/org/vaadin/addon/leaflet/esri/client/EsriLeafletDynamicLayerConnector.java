@@ -5,9 +5,12 @@ import com.vaadin.shared.ui.Connect;
 import org.peimari.gleaflet.client.Layer;
 import org.peimari.gleaflet.esri.client.DynamicMapLayer;
 import org.peimari.gleaflet.esri.client.DynamicMapLayerOptions;
+import org.peimari.gleaflet.esri.client.LayerDefs;
 import org.vaadin.addon.leaflet.client.AbstractLeafletLayerConnector;
 import org.vaadin.addon.leaflet.esri.LEsriDynamicMapLayer;
 import org.vaadin.addon.leaflet.esri.shared.EsriLeafletDynamicLayerState;
+
+import java.util.Map;
 
 @Connect(LEsriDynamicMapLayer.class)
 public class EsriLeafletDynamicLayerConnector extends AbstractLeafletLayerConnector<DynamicMapLayerOptions> {
@@ -39,6 +42,13 @@ public class EsriLeafletDynamicLayerConnector extends AbstractLeafletLayerConnec
         if (state.layers != null) {
             options.setLayers(JsArrayUtils.readOnlyJsArray(state.layers));
         }
+        if (state.layerDefs != null) {
+            LayerDefs layerDefs = LayerDefs.create();
+            for (Map.Entry<Integer, String> entry : state.layerDefs.entrySet()) {
+                layerDefs.addDef(entry.getKey(), entry.getValue());
+            }
+            options.setLayerDefs(layerDefs);
+        }
         if (state.opacity != null) {
             options.setOpacity(state.opacity);
         }
@@ -47,6 +57,9 @@ public class EsriLeafletDynamicLayerConnector extends AbstractLeafletLayerConnec
         }
         if (state.zIndex != null) {
             options.setZIndex(state.zIndex);
+        }
+        if (state.position != null) {
+            options.setPosition(state.position);
         }
         if (state.maxZoom != null) {
             options.setMaxZoom(state.maxZoom);

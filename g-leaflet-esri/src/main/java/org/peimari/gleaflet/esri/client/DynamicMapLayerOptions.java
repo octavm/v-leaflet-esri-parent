@@ -40,6 +40,11 @@ public class DynamicMapLayerOptions extends JavaScriptObject {
         this.layers = layers;
     }-*/;
 
+    public native final void setLayerDefs(LayerDefs layerDefs)
+    /*-{
+        this.layerDefs = layerDefs;
+    }-*/;
+
     public native final void setOpacity(double opacity)
     /*-{
         this.opacity = opacity;
@@ -53,6 +58,11 @@ public class DynamicMapLayerOptions extends JavaScriptObject {
     public native final void setZIndex(int zIndex)
     /*-{
         this.zIndex = zIndex;
+    }-*/;
+
+    public native final void setPosition(String position)
+    /*-{
+        this.position = position;
     }-*/;
 
     public native final void setMaxZoom(int maxZoom)

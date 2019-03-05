@@ -5,6 +5,8 @@ import com.vividsolutions.jts.geom.Geometry;
 import org.vaadin.addon.leaflet.AbstractLeafletLayer;
 import org.vaadin.addon.leaflet.esri.shared.EsriLeafletDynamicLayerState;
 
+import java.util.Map;
+
 /**
  * Allows you to work with a dynamic map service resource exposed by the ArcGIS Server REST API.
  * A dynamic map service generates images on the fly. For cached map services, use LTileLayer.
@@ -80,6 +82,19 @@ public class LEsriDynamicMapLayer extends AbstractLeafletLayer {
         getState().layers = layers;
     }
 
+    public Map<Integer, String> getLayerDefs() {
+        return getState().layerDefs;
+    }
+
+    /**
+     * SQL filters to define what features will be included in the image rendered by the service. A {@code Map} is used
+     * with keys that map each query to its respective layer. E.g.: { 3: "STATE_NAME='Kansas'", 9: "POP2007>25000" }
+     * @param layerDefs
+     */
+    public void setLayerDefs(Map<Integer, String> layerDefs) {
+        getState().layerDefs = layerDefs;
+    }
+
     public Double getOpacity() {
         return getState().opacity;
     }
@@ -115,6 +130,18 @@ public class LEsriDynamicMapLayer extends AbstractLeafletLayer {
      */
     public void setZIndex(Integer zIndex) {
         getState().zIndex = zIndex;
+    }
+
+    public String getPosition() {
+        return getState().position;
+    }
+
+    /**
+     * Legacy option to control draw order. For best results, use {@link #setPane(String)}.
+     * @param position Default is 'front'
+     */
+    public void setPosition(String position) {
+        getState().position = position;
     }
 
     public Integer getMaxZoom() {
