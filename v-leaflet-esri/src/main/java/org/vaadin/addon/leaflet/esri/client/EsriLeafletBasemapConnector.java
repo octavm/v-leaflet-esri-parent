@@ -20,6 +20,7 @@ public class EsriLeafletBasemapConnector extends LeafletTileLayerConnector {
     protected BasemapLayerOptions createOptions() {
         BasemapLayerOptions o = super.createOptions().cast();
         EsriLeafletBasemapLayerState s = getState();
+        deleteAttributionToUseDefaultProvidedByEsri(o);
         if (s.token != null) {
             o.setToken(s.token);
         }
@@ -30,4 +31,9 @@ public class EsriLeafletBasemapConnector extends LeafletTileLayerConnector {
     protected BasemapLayer createGridLayer(GridLayerOptions o) {
         return BasemapLayer.create(getState().layerType, (BasemapLayerOptions) o);
     }
+
+    private static native void deleteAttributionToUseDefaultProvidedByEsri(BasemapLayerOptions o) 
+    /*-{
+        delete o.attribution;
+    }-*/;
 }
